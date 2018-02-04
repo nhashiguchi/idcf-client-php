@@ -1,4 +1,6 @@
-# Idcf::Client for PHP
+# IDCF Cloud PHP Client
+
+A PHP client for [IDCF Cloud](https://www.idcf.jp/cloud/).
 
 ## Installation
 
@@ -11,7 +13,7 @@ execute:
 
 ## Usage
 
-## ILB
+## Infinite LB
 
 ```php
 <?php
