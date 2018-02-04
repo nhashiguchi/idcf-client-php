@@ -1,7 +1,7 @@
 <?php
 namespace Idcf\Client;
 
-class Dns extends BaseClient
+class Dns extends IdcfBaseClient
 {
     public function __construct(
         $api_key,

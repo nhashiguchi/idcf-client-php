@@ -9,9 +9,21 @@ execute:
     $ composer require idcf/client
 
 ## Dependencies
-  - PHP 5.3 or later
+  - PHP 5.4 or later
 
 ## Usage
+
+## Computing
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+$api_key = '';
+$secret_key = '';
+$client = new \Idcf\Client\Compute($api_key, $secret_key);
+$args = array('command' => 'listZones');
+$client->get($args);
+```
 
 ## Infinite LB
 

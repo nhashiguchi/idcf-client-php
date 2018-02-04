@@ -1,7 +1,7 @@
 <?php
 namespace Idcf\Client;
 
-class CdnZero extends BaseClient
+class CdnZero extends IdcfBaseClient
 {
     public function __construct(
         $api_key,
