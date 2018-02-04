@@ -1,0 +1,38 @@
+---
+version: "2"
+checks:
+  argument-count:
+    config:
+      threshold: 5
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - php
+  fixme:
+    enabled: true
+  phpmd:
+    enabled: true
+    checks:
+      CleanCode/BooleanArgumentFlag:
+        enabled: false
+      Controversial/CamelCaseParameterName:
+        enabled: false
+      Controversial/CamelCasePropertyName:
+        enabled: false
+      Controversial/CamelCaseVariableName:
+        enabled: false
+    exclude_paths:
+    - tests/
+  phpcodesniffer:
+    enabled: true
+    config:
+      file_extensions: php
+      standard: PSR2
+      encoding: utf-8
+ratings:
+  paths:
+  - "**.php"
+exclude_paths:
+- vendor/
