@@ -6,7 +6,7 @@ namespace Idcf\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers Cdn
+ * @covers CdnZero
  */
 final class CdnZeroTest extends TestCase
 {
