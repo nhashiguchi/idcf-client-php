@@ -154,10 +154,6 @@ class BaseClient extends Version
                 'params' => null
             );
         }
-        return array(
-            'query' => array(),
-            'path' => $path,
-            'params' => $params
-        );
+        return array('query' => array(), 'path' => $path, 'params' => $params);
     }
 }

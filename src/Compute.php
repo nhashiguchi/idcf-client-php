@@ -46,7 +46,9 @@ class Compute extends BaseClient
         return $this->endpoint . '?' . http_build_query($query);
     }
 
-
+    /**
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
     protected function createHeader($args)
     {
         return array(
@@ -66,10 +68,9 @@ class Compute extends BaseClient
         $query = parent::queryParse($method, $path, $params);
         if ($method == 'get') {
             self::buildQuery($query['query']);
-        } else {
-            self::buildQuery($query['params']);
+            return $query;
         }
-        var_dump($query);
+        self::buildQuery($query['params']);
         return $query;
     }
 
@@ -100,4 +101,4 @@ class Compute extends BaseClient
 
 // $client = new \Idcf\Client\Compute($api_key, $secret_key);
 // $args = array('command' => 'listZones');
-// var_dump($client->get($args));
+// $client->get($args);
