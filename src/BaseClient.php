@@ -89,7 +89,12 @@ class BaseClient extends Version
         if ($info['http_code'] < 200 || 300 <= $info['http_code']) {
             throw new Exception\ServerError($body, $info['http_code']);
         }
-        $result = json_decode($body);
+        return self::respondeDecode($body);
+    }
+
+    private function respondeDecode($body)
+    {
+        $result = json_decode($body, $this->return_assoc);
         $errno = json_last_error();
         if (JSON_ERROR_NONE !== $errno) {
             throw new Exception\DecodeError($errno);
@@ -118,7 +123,7 @@ class BaseClient extends Version
                 $opts[CURLOPT_CUSTOMREQUEST] = $args['method'];
         }
         if ($method != 'get' && !is_null($query['params'])) {
-            $opts[CURLOPT_POSTFIELDS] = json_encode($query['params'], $this->return_assoc);
+            $opts[CURLOPT_POSTFIELDS] = json_encode($query['params']);
         }
         return $opts;
     }
