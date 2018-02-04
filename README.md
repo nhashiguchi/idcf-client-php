@@ -20,7 +20,7 @@ execute:
 require_once 'vendor/autoload.php';
 $api_key = '';
 $secret_key = '';
-$client = new \Idcf\Client\Compute($api_key, $secret_key);
+$client = new \Idcf\Client\Compute($api_key, $secret_key, 'compute.jp-east.idcfcloud.com');
 $args = array('command' => 'listZones');
 $client->get($args);
 ```
